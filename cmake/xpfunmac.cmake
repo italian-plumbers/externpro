@@ -748,10 +748,10 @@ function(xpMarkdownReadmeFinalize)
     file(MD5 ${g_READMEdep}.txt hash)
     file(READ ${g_READMEdep}.txt depsDotDot)
     file(REMOVE ${g_READMEdep} ${g_READMEdep}.txt)
-    set(user smanders)
-    set(branch dev)
+    set(user italian-plumbers)
+    set(branch master)
     set(mark depgraph_${hash})
-    set(url "https://raw.githubusercontent.com/${user}/externpro/${branch}/projects/README.md")
+    set(url "https://raw.githubusercontent.com/${user}/old_externpro/${branch}/projects/README.md")
     string(REPLACE "/" "%2F" url ${url})
     string(REPLACE ":" "%3A" url ${url})
     file(APPEND ${g_README}
@@ -1275,19 +1275,6 @@ function(xpTouchFiles fileList)
 endfunction()
 
 function(xpCheckInstall cmakeProjectName)
-  set(findFile ${moduleDir}/Find${cmakeProjectName}.cmake)
-  execute_process(COMMAND ${CMAKE_COMMAND} -E compare_files ${CMAKE_CURRENT_LIST_FILE} ${findFile}
-    RESULT_VARIABLE filesDiff
-    OUTPUT_QUIET
-    ERROR_QUIET
-    )
-  if(filesDiff)
-    message(AUTHOR_WARNING "Find scripts don't match. "
-      "You may want to update the local with the ${cmakeProjectName} version. "
-      "local: ${CMAKE_CURRENT_LIST_FILE}. "
-      "${cmakeProjectName}: ${findFile}."
-      )
-  endif()
   file(GLOB txtFiles ${${cmakeProjectName}_DIR}/${cmakeProjectName}_*.txt)
   list(GET txtFiles 0 infoFile)
   execute_process(COMMAND lsb_release --description

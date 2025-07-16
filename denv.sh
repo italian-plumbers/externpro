@@ -16,7 +16,7 @@ else
   fi
 fi
 dkr="$(findVer 'FROM' .devcontainer/local.dockerfile)"
-dkr=$(eval echo ${dkr}) # ghcr.io/externpro/buildpro/${BPROIMG}:${BPROTAG}
+dkr=$(eval echo ${dkr}) # ghcr.io/italian-plumbers/buildpro/${BPROIMG}:${BPROTAG}
 hst=$(echo "${dkr}" | cut -d/ -f1) # ghcr.io
 rel=$(echo "${dkr}" | cut -d/ -f4) # ${BPROIMG}:${BPROTAG}
 rel=${rel//:/-} # parameter expansion substitution
