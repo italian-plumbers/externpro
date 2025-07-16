@@ -1,8 +1,8 @@
 ARG BPROIMG=rocky-mdv
 ARG BPROTAG=latest
-FROM ghcr.io/externpro/buildpro/${BPROIMG}:${BPROTAG}
+FROM ghcr.io/italian-plumbers/buildpro/${BPROIMG}:${BPROTAG}
 LABEL maintainer="smanders"
-LABEL org.opencontainers.image.source=https://github.com/externpro/buildpro
+LABEL org.opencontainers.image.source=https://github.com/italian-plumbers/buildpro
 SHELL ["/bin/bash", "-c"]
 USER 0
 # [COPY|RUN]_IT

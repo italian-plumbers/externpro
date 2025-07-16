@@ -3,7 +3,7 @@ include(xpfunmac)
 if(NOT DEFINED externpro_REV)
   set(externpro_REV 24.05)
 endif()
-find_package(externpro REQUIRED) # github.com/smanders/externpro
+find_package(externpro REQUIRED) # github.com/italian-plumbers/old_externpro
 if(webpro)
   set(webpro_REV 24.05)
   find_package(webpro REQUIRED)

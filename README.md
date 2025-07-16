@@ -1,7 +1,7 @@
 # externpro
 
 externpro is a collection of scripts, docker-related files, and cmake that provide foundational
-support for any project wishing to leverage public [buildpro](https://github.com/externpro/buildpro)
+support for any project wishing to leverage public [buildpro](https://github.com/italian-plumbers/buildpro)
 images and third-party development packages built using externpro
 
 ## Table of Contents
@@ -15,7 +15,7 @@ images and third-party development packages built using externpro
 
 optimally externpro is added to any project as a submodule to the path `.devcontainer`
 ```
-git submodule add https://github.com/externpro/externpro .devcontainer
+git submodule add https://github.com/italian-plumbers/externpro .devcontainer
 ```
 symbolic links can be added to point to the `compose.*.[sh|yml]` file pair suitable for the project
 ```
@@ -33,10 +33,10 @@ for a good overview of the module when it was first introduced
 
 ## legacy externpro
 
-there is a legacy externpro project at [smanders/externpro](https://github.com/smanders/externpro)
+there is a legacy externpro project at [italian-plumbers/old_externpro](https://github.com/italian-plumbers/old_externpro)
 that creates a bundled package of several third-party
-[projects](https://github.com/smanders/externpro/blob/master/projects/README.md) in tar.xz
-[releases](https://github.com/smanders/externpro/releases) -- smanders/externpro will eventually be
+[projects](https://github.com/italian-plumbers/old_externpro/blob/master/projects/README.md) in tar.xz
+[releases](https://github.com/italian-plumbers/old_externpro/releases) -- italian-plumbers/old_externpro will eventually be
 phased out and archived as work is done to move these projects to build standalone and host their
 devel packages as github release assets
 

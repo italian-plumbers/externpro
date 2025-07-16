@@ -40,7 +40,7 @@ if(NOT externpro_DIR)
     set(archive_name "${XP_INSTALLED_NAME}.tar.xz")
     message(STATUS "${XP_INSTALLED_NAME} not found.")
     message(STATUS "Attempting download of ${archive_name} ...")
-    file(DOWNLOAD https://github.com/smanders/externpro/releases/download/${externpro_REV}/${archive_name}
+    file(DOWNLOAD https://github.com/italian-plumbers/old_externpro/releases/download/${externpro_REV}/${archive_name}
       $ENV{extern_DIR}/${archive_name}
       )
     message(STATUS "Attempting extraction of ${archive_name} ...")
@@ -53,12 +53,12 @@ if(NOT externpro_DIR)
     if(EXISTS $ENV{extern_DIR}/${XP_INSTALLED_NAME})
       set(externpro_DIR $ENV{extern_DIR}/${XP_INSTALLED_NAME})
     else()
-      message(AUTHOR_WARNING "Automatic download and extraction failed. Verify https://github.com/smanders/externpro/releases/download/${externpro_REV}/${archive_name} exists and can be accessed.")
+      message(AUTHOR_WARNING "Automatic download and extraction failed. Verify https://github.com/italian-plumbers/old_externpro/releases/download/${externpro_REV}/${archive_name} exists and can be accessed.")
     endif()
   endif()
 endif()
 if(NOT externpro_DIR)
-  set(externpro_INSTALL_INFO ".\n Installers located at https://github.com/smanders/externpro/releases\n tar -xf /path/to/externpro*.tar.xz --directory=/path/to/install/\n ** or set extern_DIR in ENV for automatic download and extraction\n") # externpro can set(XP_INSTALL_INFO) to define this
+  set(externpro_INSTALL_INFO ".\n Installers located at https://github.com/italian-plumbers/old_externpro/releases\n tar -xf /path/to/externpro*.tar.xz --directory=/path/to/install/\n ** or set extern_DIR in ENV for automatic download and extraction\n") # externpro can set(XP_INSTALL_INFO) to define this
   if(DEFINED externpro_INSTALLER_LOCATION) # defined by project using externpro
     message(FATAL_ERROR "externpro ${externpro_SIG} not found.\n${externpro_INSTALLER_LOCATION}")
   else()
