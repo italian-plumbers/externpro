@@ -1275,19 +1275,6 @@ function(xpTouchFiles fileList)
 endfunction()
 
 function(xpCheckInstall cmakeProjectName)
-  set(findFile ${moduleDir}/Find${cmakeProjectName}.cmake)
-  execute_process(COMMAND ${CMAKE_COMMAND} -E compare_files ${CMAKE_CURRENT_LIST_FILE} ${findFile}
-    RESULT_VARIABLE filesDiff
-    OUTPUT_QUIET
-    ERROR_QUIET
-    )
-  if(filesDiff)
-    message(AUTHOR_WARNING "Find scripts don't match. "
-      "You may want to update the local with the ${cmakeProjectName} version. "
-      "local: ${CMAKE_CURRENT_LIST_FILE}. "
-      "${cmakeProjectName}: ${findFile}."
-      )
-  endif()
   file(GLOB txtFiles ${${cmakeProjectName}_DIR}/${cmakeProjectName}_*.txt)
   list(GET txtFiles 0 infoFile)
   execute_process(COMMAND lsb_release --description
